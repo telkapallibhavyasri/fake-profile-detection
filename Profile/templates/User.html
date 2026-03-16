@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<title>Fake Profile Detection</title>
+</head>
+
+<body>
+
+<h1>Fake Profile Detection Using ANN</h1>
+
+<form method="post">
+{% csrf_token %}
+
+<input type="text" name="t1" placeholder="Enter Username">
+
+<input type="submit" value="Check Profile">
+
+</form>
+
+<br>
+
+{% if result %}
+<h2>{{ result }}</h2>
+{% endif %}
+
+{% if probability %}
+<h3>Fake Profile Probability: {{ probability }} %</h3>
+{% endif %}
+
+</body>
+
+</html>
